@@ -2,29 +2,107 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>اكتر خيرك</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كتر خيرك</title>
+
 <style>
-body {
-  font-family: Arial;
-  text-align: center;
-  background-color: #ffe6ea;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffe6ea;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* القلوب */
+.heart {
+  position: absolute;
+  color: rgba(255, 0, 90, 0.4);
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+/* المحتوى */
+.container {
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  padding: 25px 20px;
+  border-radius: 25px;
+  width: 95%;
+  max-width: 420px;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
 img {
-  width: 300px;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 380px;   /* الصورة أكبر */
+  border-radius: 25px;
+  margin: 15px 0;
+}
+
+p {
+  font-size: 16px;
 }
 </style>
 </head>
+
 <body>
 
-<h1> 😈</h1>
+<!-- القلوب -->
+<script>
+for (let i = 0; i < 30; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (18 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+  document.body.appendChild(heart);
+}
+</script>
 
-<h2> المعاد: يوم الخميس ده اخرى معاك </h2>
-<h2>وهناكل بالف جنيهه</h2>
+<div class="container">
+  <h1>😈</h1>
 
-<img src="ourphoto.jpg">
+  <h2>المعاد: يوم الخميس ده خروجة معاك</h2>
+  <h2>وهناكل بـ ألف جنيه 😌</h2>
 
-<p>810+155جنيه مصرى 😌</p>
+  <img src="ourphoto.jpg">
+
+  <p>الحساب: 810 + 155 جنيه مصري 💸</p>
+</div>
 
 </body>
 </html>
+
