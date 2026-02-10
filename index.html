@@ -2,30 +2,96 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>سؤال مهم جدًا</title>
+
 <style>
-body {
-  font-family: Arial;
-  text-align: center;
-  background-color: #fff0f5;
-  margin-top: 100px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-button {
+
+body {
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffe6ec;
+  overflow: hidden;
+}
+
+/* القلوب */
+.heart {
+  position: absolute;
+  color: rgba(255, 0, 90, 0.4);
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+/* المحتوى */
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px 20px;
+  border-radius: 20px;
+  z-index: 2;
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
   font-size: 24px;
-  padding: 15px 40px;
+  margin-bottom: 25px;
+}
+
+button {
+  font-size: 22px;
+  padding: 12px 40px;
   background-color: #ff4d6d;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
 }
 </style>
 </head>
+
 <body>
 
-<h1>هل نفسك تشوف خلقتى؟ 😌</h1>
+<!-- قلوب -->
+<script>
+for (let i = 0; i < 25; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+  document.body.appendChild(heart);
+}
+</script>
 
-<button onclick="location.href='yes.html'">YES</button>
+<div class="container">
+  <h1>هل إنت عايز تشوفني؟ </h1>
+  <button onclick="location.href='yes.html'">YES</button>
+</div>
 
 </body>
 </html>
+
